@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
-import firebaseConfig from '../scr/firebase-credenciais.js';
-// Initialize Firebase
+import firebaseConfig from '../scr/firebase-config.js';
+// Initialize Firebase  
+
 const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const db = getDatabase(app);

@@ -1,7 +1,8 @@
 #ignore o arquivoo
+
 firebase-debug.log
 firebase.json
-firebase-credenciais.js
+firebase-config.js
 .firebaserc
 .firebase
 .vscode
@@ -9,3 +10,4 @@ package.jsonn
 node_modules
 *.json
 package.json
+
