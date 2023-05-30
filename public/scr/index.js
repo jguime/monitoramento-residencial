@@ -7,14 +7,14 @@ const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const db = getDatabase(app);
 
-const starCountRef = ref(db, "/History");
+const starCountRef = ref(db, "/History/sensing");
 onValue(starCountRef, (snapshot) => {
   const data = Object.values(snapshot.val())
 
   const labels = data.map(function(index){
     var timestamp =  index.timestamp
     var datahora = new Date(timestamp);
-    return datahora.toLocaleString("pt-BR", {timeZone: "UTC", format: "DD/MM/YYYY HH:mm:ss"});;
+    return datahora.toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo", format: "DD/MM/YYYY HH:mm:ss"});;
   })
   const temp = data.map(function(index){
     return index.T;
@@ -35,7 +35,7 @@ function makeGraf(id_graf, labels,dados, color) {
   var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: labels,
+      labels: labels.slice(-30),
       datasets: [{
         data: dados,
         lineTension: 0,
